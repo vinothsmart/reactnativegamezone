@@ -1,7 +1,6 @@
 import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
-import Home from "./screens/home";
 import Navigator from "./routes/homeStack";
 
 export default function App() {
