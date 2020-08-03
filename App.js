@@ -1,7 +1,7 @@
 import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
-import Navigator from "./routes/homeStack";
+import Navigator from "./routes/drawer";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
