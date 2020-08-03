@@ -6,9 +6,15 @@ import ReviewDetails from "../screens/reviewDetails";
 const screens = {
   Home: {
     screen: Home,
+    navigationOptions: {
+      title: "GameZone",
+    },
   },
   ReviewDetails: {
     screen: ReviewDetails,
+    navigationOptions: {
+      title: "Review Details",
+    },
   },
 };
 
