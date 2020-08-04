@@ -8,11 +8,16 @@ import React from "react";
 const screens = {
   Home: {
     screen: Home,
-    navigationOptions: {
-      headerTitle: () => <Header />,
-      // title: "GameZone",
-      // headerStyle: { backgroundColor: "#eee" },
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header navigation={navigation} />,
+      };
     },
+    // navigationOptions: {
+    //   headerTitle: () => <Header />,
+    //   // title: "GameZone",
+    //   // headerStyle: { backgroundColor: "#eee" },
+    // },
   },
   ReviewDetails: {
     screen: ReviewDetails,
