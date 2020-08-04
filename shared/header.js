@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Header() {
+export default function Header({ navigation }) {
   const openMenu = () => {
-    // navigation.openDrawer();
+    navigation.openDrawer();
   };
 
   return (
