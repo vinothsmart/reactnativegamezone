@@ -8,7 +8,10 @@ export default function Header({ navigation, title }) {
   };
 
   return (
-    <View style={styles.header}>
+    <ImageBackground
+      source={require("../assets/game_bg.png")}
+      style={styles.header}
+    >
       <MaterialIcons
         name="menu"
         size={28}
@@ -22,7 +25,7 @@ export default function Header({ navigation, title }) {
         />
         <Text style={styles.headerText}>{title}</Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
