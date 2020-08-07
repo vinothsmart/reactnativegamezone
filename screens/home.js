@@ -1,13 +1,24 @@
 import React, { useState } from "react";
-import { Text, View, Button, FlatList, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  FlatList,
+  TouchableOpacity,
+  Modal,
+} from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
   // const pressHandler = () => {
   //   navigation.navigate("ReviewDetails");
   //   // navigation.push("ReviewDetails");
   // };
+
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [reviews, setReviews] = useState([
     {
@@ -34,6 +45,26 @@ export default function Home({ navigation }) {
     <View style={globalStyles.container}>
       {/* <Text style={globalStyles.titleText}>Home Screen</Text> */}
       {/* <Button title="Go to Review Deatils" onPress={pressHandler} /> */}
+
+      <Modal visible={modalOpen} animationType="slide">
+        <View style={styles.modalContext}>
+          <MaterialIcons
+            name="close"
+            size={24}
+            style={{ ...styles.modalToggle, ...styles.modalClose }}
+            onPress={() => setModalOpen(false)}
+          />
+          <Text>Hello From the modal :)</Text>
+        </View>
+      </Modal>
+
+      <MaterialIcons
+        name="add"
+        size={24}
+        style={styles.modalToggle}
+        onPress={() => setModalOpen(true)}
+      />
+
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
@@ -49,3 +80,21 @@ export default function Home({ navigation }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  modalToggle: {
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: "#f2f2f2",
+    padding: 10,
+    borderRadius: 10,
+    alignSelf: "center",
+  },
+  modalClose: {
+    marginTop: 20,
+    marginBottom: 0,
+  },
+  modalContext: {
+    flex: 1,
+  },
+});
