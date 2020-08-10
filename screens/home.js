@@ -11,6 +11,7 @@ import {
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewFrom from "../screens/reviewFrom";
 
 export default function Home({ navigation }) {
   // const pressHandler = () => {
@@ -54,7 +55,7 @@ export default function Home({ navigation }) {
             style={{ ...styles.modalToggle, ...styles.modalClose }}
             onPress={() => setModalOpen(false)}
           />
-          <Text>Hello From the modal :)</Text>
+          <ReviewFrom />
         </View>
       </Modal>
 
