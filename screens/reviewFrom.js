@@ -19,24 +19,29 @@ export default function ReviewForm() {
               style={globalStyles.input}
               placeholder="Review Title"
               onChangeText={props.handleChange("title")}
-              value={props.values.input}
+              //   value={props.values.title}
+              value={props.values}
             />
             <TextInput
-              style={globalStyles.body}
+              multiline
+              style={globalStyles.input}
               placeholder="Review Body"
               onChangeText={props.handleChange("body")}
-              value={props.values.body}
+              //   value={props.values.body}
+              value={props.values}
             />
             <TextInput
-              style={globalStyles.rating}
+              style={globalStyles.input}
               placeholder="Rating (1 to 5)"
               onChangeText={props.handleChange("rating")}
               value={props.values.rating}
+              //   value={props.values}
+              keyboardType="numeric"
             />
             <Button
               title="submit"
               color="maroon"
-              onPress={props.handelSubmit}
+              onPress={props.handleSubmit}
             />
           </View>
         )}
