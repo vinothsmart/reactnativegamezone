@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { globalStyles } from "../styles/global";
+import React from "react";
+import { StyleSheet, Button, TextInput, View, Text } from "react-native";
+import { globalStyles } from "../styles/global.js";
 import { Formik } from "formik";
-import { TextInput } from "react-native-gesture-handler";
 
 export default function ReviewForm() {
   return (
     <View style={globalStyles.container}>
       <Formik
-        intialValues={{ title: "", body: "", rating: "" }}
+        initialValues={{ title: "", body: "", rating: "" }}
         onSubmit={(values) => {
           console.log(values);
         }}
@@ -17,30 +16,30 @@ export default function ReviewForm() {
           <View>
             <TextInput
               style={globalStyles.input}
-              placeholder="Review Title"
+              placeholder="Review title"
               onChangeText={props.handleChange("title")}
-              //   value={props.values.title}
-              value={props.values}
+              value={props.values.title}
             />
+
             <TextInput
+              style={globalStyles.input}
               multiline
-              style={globalStyles.input}
-              placeholder="Review Body"
+              placeholder="Review details"
               onChangeText={props.handleChange("body")}
-              //   value={props.values.body}
-              value={props.values}
+              value={props.values.body}
             />
+
             <TextInput
               style={globalStyles.input}
-              placeholder="Rating (1 to 5)"
+              placeholder="Rating (1 - 5)"
               onChangeText={props.handleChange("rating")}
               value={props.values.rating}
-              //   value={props.values}
               keyboardType="numeric"
             />
+
             <Button
-              title="submit"
               color="maroon"
+              title="Submit"
               onPress={props.handleSubmit}
             />
           </View>
