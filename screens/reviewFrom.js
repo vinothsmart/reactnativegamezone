@@ -1,45 +1,42 @@
-import React from "react";
-import { StyleSheet, Button, TextInput, View, Text } from "react-native";
-import { globalStyles } from "../styles/global.js";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 
-export default function ReviewForm() {
+export default function ReviewForm({ addReview }) {
   return (
     <View style={globalStyles.container}>
       <Formik
         initialValues={{ title: "", body: "", rating: "" }}
         onSubmit={(values) => {
-          console.log(values);
+          addReview(values);
         }}
       >
         {(props) => (
           <View>
             <TextInput
               style={globalStyles.input}
-              placeholder="Review title"
+              placeholder="Review Title"
               onChangeText={props.handleChange("title")}
               value={props.values.title}
             />
-
             <TextInput
-              style={globalStyles.input}
               multiline
-              placeholder="Review details"
+              style={globalStyles.input}
+              placeholder="Review Body"
               onChangeText={props.handleChange("body")}
               value={props.values.body}
             />
-
             <TextInput
               style={globalStyles.input}
-              placeholder="Rating (1 - 5)"
+              placeholder="Rating (1 to 5)"
               onChangeText={props.handleChange("rating")}
               value={props.values.rating}
               keyboardType="numeric"
             />
-
             <Button
+              title="submit"
               color="maroon"
-              title="Submit"
               onPress={props.handleSubmit}
             />
           </View>

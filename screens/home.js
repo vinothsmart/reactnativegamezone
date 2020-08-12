@@ -42,6 +42,14 @@ export default function Home({ navigation }) {
     },
   ]);
 
+  const addReview = (review) => {
+    review.key = Math.random().toString();
+    setReviews((currentReviews) => {
+      return [review, ...currentReviews];
+    });
+    setModalOpen(false);
+  };
+
   return (
     <View style={globalStyles.container}>
       {/* <Text style={globalStyles.titleText}>Home Screen</Text> */}
@@ -55,7 +63,7 @@ export default function Home({ navigation }) {
             style={{ ...styles.modalToggle, ...styles.modalClose }}
             onPress={() => setModalOpen(false)}
           />
-          <ReviewFrom />
+          <ReviewFrom addReview={addReview} />
         </View>
       </Modal>
 
