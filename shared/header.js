@@ -11,6 +11,7 @@ export default function Header({ navigation, title }) {
     <ImageBackground
       source={require("../assets/game_bg.png")}
       style={styles.header}
+      // style={{ width: "100%", height: 100 }}
     >
       <MaterialIcons
         name="menu"
@@ -42,10 +43,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#333",
     letterSpacing: 1,
-  },
-  icon: {
-    position: "absolute",
-    left: 16,
   },
   icon: {
     position: "absolute",
