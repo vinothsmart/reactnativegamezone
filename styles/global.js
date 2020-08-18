@@ -21,6 +21,9 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     borderRadius: 6,
   },
+  errorText: {
+    color: "red",
+  },
 });
 
 export const images = {
